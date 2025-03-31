@@ -15,3 +15,16 @@ h1 {
 #result .red {
   color: #e74c3c;
 }
+
+#restart {
+  background-color: red
+  ;
+}
+
+#result {
+  background-color: blue;
+}
+
+#countdown {
+  background-color: yellow;
+}
