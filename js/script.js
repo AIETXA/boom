@@ -19,13 +19,15 @@ restart.addEventListener('click', () => {
 }) //boton reiniciar ok
   
 
-const numeroDelUsuario = prompt ('Elige un número del 1 al 3')
+const numeroDelUsuario = prompt ('Elige un número del 1 al 3');
+
+
 function introducirNumero() {
    if (numeroDelUsuario) {
-    userInput.value = numeroDelUsuario}
+        userInput.value = numeroDelUsuario}
         console.log(numeroDelUsuario);
 };
-
+introducirNumero()
 
 const contador = new Promise((resolve) => {
     setTimeout(() => {
