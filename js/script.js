@@ -16,8 +16,8 @@ const cuentaRegresiva = document.getElementById('cuentaRegresiva');
 const resultadoFinal = document.getElementById('resultadoFinal');
 const empezarDeNuevo = document.getElementById('restart');
 let numerosAleatorios 
+let time = 5;
 const numeroDelUsuario = prompt ('Elige un número del 1 al 3');
-
 
 
 
@@ -33,44 +33,55 @@ const contador = new Promise((resolve) => {
  setTimeout(() => {
      numerosAleatorios = Math.floor(Math.random()*3) + 1;
      resolve(numerosAleatorios);
- },5000)
+ },6000)
 });
 contador.then((numerosAleatorios) =>
 compuCountdown.innerText = numerosAleatorios
 );
 
-//contador();
+//no funciona y no se porque
+
+function resultadoDelJuego() {
+  /*compuCountdown.textContent = numerosAleatorios;
+  userInput.textContent = numeroDelUsuario;
+  resultadoFinal.textContent = userInput && compuCountdown;*/
+
+  //meter esto es una funcion y concatenar.
+if(numeroDelUsuario == numerosAleatorios) {
+  resultadoFinal.innerHTML = '<h2>¡Has salvado el mundo!</h2>';
+} else {
+  resultadoFinal.innerHTML ='<h2>La bomba ha estallado</h2>';
+}
+
+};
+resultadoDelJuego();
+
+
+
+
+
 
 
 //hasta aca funciona bien
 
 
+//intervalo hecho en clase
+function count () {
+  
+cuentaRegresiva = setInterval(() => {
+  cuentaRegresiva.innerHTML = `Cuenta regresiva: ${time}`;
+    if(time === 0) {
+      
+      clearInterval(cuentaRegresiva)
+    } else { 
+      time--;
+    } 
+  },1000);
 
-//no funciona y no se porque
 
-function resultadoDelJuego() {
-  compuCountdown.textContent = numerosAleatorios;
-  userInput.textContent = numeroDelUsuario;
-  resultadoFinal.textContent = userInput && compuCountdown;
-
-if(numeroDelUsuario === numerosAleatorios) {
-  resultadoFinal.innerHTML = '¡Has salvado el mundo!';
-} else {
-  resultadoFinal.innerHTML ='La bomba ha estallado';
 }
+count();
 
-};
-
-
-// Función de cuenta atrás utilizando async/await
-async function startCountdown() {
-  for (let i = cuentaRegresiva; i > 0; i--) {
-    cuentaRegresiva.textContent = i;
-      await boom(1000);  // Espera 1 segundo antes de continuar
-  }
-}
-
- 
 
 
 
@@ -84,7 +95,9 @@ function resetGame() {
   
 }
 
-empezarDeNuevo.addEventListener("click", resetGame);
+empezarDeNuevo.addEventListener("click", () => {
+  location.reload()
+});
 
 
 
