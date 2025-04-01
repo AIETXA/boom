@@ -50,6 +50,25 @@ p {
 }
 
 #countdown {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: red; 
+  font-weight: 800;
+  background-color: #873F6F;
+  width: 30px;
+  margin: 10px;
+  padding: 20px;
+  border: 8px #332A2A solid;
+  font-size: 20px;
+  align-content: center;
+  border-radius: 5px;
+}
+#userInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: greenyellow; 
   font-weight: 800;
   background-color: #873F6F;
@@ -58,17 +77,10 @@ p {
   padding: 20px;
   border: 8px #332A2A solid;
   font-size: 20px;
-  align-items: center;
+  align-content: center;
   border-radius: 5px;
 }
-#userInput {
-  color: greenyellow; 
-  font-weight: 800;
-  background-color: #9B4B4F;
-  width: 30px;
-  margin: 10px;
-  padding: 20px;
-  border: 8px #332A2A solid;
-  font-size: 20px;
-  border-radius: 5px;
+
+.contadorCompu {
+  background-color: red;
 }
